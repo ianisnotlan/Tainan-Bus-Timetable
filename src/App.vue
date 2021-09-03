@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import timeTable from './components/HelloWorld.vue'
+import timeTable from './components/TimeTable.vue'
 
 export default {
   name: 'App',
