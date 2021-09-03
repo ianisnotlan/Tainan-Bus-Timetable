@@ -21,18 +21,16 @@
 
 <script>
  
-const url = 'http://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/Tainan?$format=JSON'
-
-import axios from 'axios'
+import getData from '../../back'
 export default {
   name: 'timeTable',
   data() {
     return {
       busData: {},
-        routeName: [],
-        selected: '請選擇路線',
-        routeInfo: [],
-        previousUpdate: 0,
+      routeName: [],
+      selected: '請選擇路線',
+      routeInfo: [],
+      previousUpdate: 0,
     }
   },
   watch: {
@@ -47,8 +45,7 @@ export default {
   },
   methods: {
     async getBusData() {
-      let res = await axios.get(url)
-      this.busData = res.data
+      this.busData = await getData()
       console.log('updateBusData')
     },
     getRouteName() {
